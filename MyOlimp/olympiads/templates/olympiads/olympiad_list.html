@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Список олимпиад {% endblock %}
+
+{% block content %}
+    <h4>hided</h4>
+    <div class="olympiad_content">
+    <table width="100%">
+        <center><form action="{% url 'search_results' %}" method="get">
+            <input name='q' type="text" placeholder="Search...">
+            <button type="submit">Найти</button>
+        </form></center>
+    {% if olympiad_list %}
+        <tr><th><center>Олимпиада</center></th><th><center>Предмет</center></th></tr>
+        {% for olympiad in object_list %}
+            <tr>
+                <td><a href="/olympiads/{{ olympiad.id }}" class="content_link"><h3>{{olympiad.name}}</h3></a></td>
+                <td class="olympiad_subject" align="right"> {{ olympiad.subject }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <p>Тут пока пусто =(</p>
+    {% endif %}</table>
+    {% if request.user.is_staff %}
+        <p>Не нашли то, что искали? Вы можете <a href="{% url 'olympiad_create' %}">создать</a> олимпиаду.</p>
+    {% endif %}
+    </div>
+{% endblock %}

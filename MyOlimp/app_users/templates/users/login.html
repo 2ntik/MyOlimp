@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %} <h1>Hided behind the header</h1><center><div class="login_content">
+    {% if request.user.is_authenticated %}
+        <p>Вы уже вошли в систему. Вы можете <a href="{% url 'logout' %}" class="regular_link">выйти</a> из системы,</p>
+        <p><a href="{% url 'change_password' %}" class="regular_link">поменять пароль</a> или
+            <a href="{% url 'edit' %}" class="regular_link">отредактировать</a> свой профиль.</p>
+    {% else %}
+        <h2>Страница входа</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+       <p>Нет профиля? <a href="{% url 'register' %}" class="regular_link">Зарегистрируйтесь!</a></p></div></center>
+    {% endif %}
+{% endblock %}

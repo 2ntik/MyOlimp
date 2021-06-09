@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %} Результаты поиска {% endblock %}
+
+{% block content %}
+    <h4>hided</h4>
+    <div class="olympiad_content">
+    <table width="100%">
+    <center><h2>Результаты поиска</h2></center>
+    {% if olympiad_list %}
+        <tr><th><center>Олимпиада</center></th><th><center>Предмет</center></th></tr>
+        {% for olympiad in object_list %}
+            <tr>
+                <td><a href="/olympiads/{{ olympiad.id }}" class="content_link"><h3>{{olympiad.name}}</h3></a></td>
+                <td class="olympiad_subject" align="right"> {{ olympiad.subject }}</td>
+            </tr>
+        {% endfor %}
+    {% else %}
+        <center><p>К сожалению, мы ничего не нашли =(</p></center>
+    {% endif %}</table>
+    {% if request.user.is_staff %}
+        <p>Не нашли то, что искали? Вы можете <a href="{% url 'olympiad_create' %}">создать</a> олимпиаду.</p>
+    {% endif %}
+    </div>
+{% endblock %}

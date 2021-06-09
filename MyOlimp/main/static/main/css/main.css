@@ -1,0 +1,117 @@
+.header {
+    width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #87c88e;
+	display: flex;
+	justify-content: space-around;
+}
+
+footer{
+    width: 100%;
+    float: left;
+    padding: 1%;
+    background-color: #87c88e;
+    border-top: 2px solid silver;
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.separator, .header{
+    height: 80px;
+}
+
+body{
+    padding-top: 30px;
+    background-image: url(../img/back.png);
+
+}
+
+.header, .header_main, .header_logo, .header_news, .header_olimp, .header_separator, .logo, .login, .separator{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.header div{
+    position: relative;
+    display: inline-block;
+}
+
+.logo, .login{
+    margin: 8% 10%;
+    width: 70px;
+    height: 70px;
+}
+
+.header_main, .header_news, .header_olimp{
+    margin: auto 6%;
+}
+
+.header_separator, .separator{
+    margin: 0;
+    padding: 0;
+}
+
+.header_text{
+    margin-top: 6%;
+}
+
+.header_link{
+    color: black;
+}
+
+.body_div{
+    background: white;
+    margin: auto 35%;
+}
+
+.header_link:hover{
+    color: brown;
+    text-decoration: none;
+}
+
+.content_link{
+    text-decoration: underline;
+    color: black;
+}
+
+.login_content{
+    background: white;
+    margin: auto 30%;
+}
+
+.user_content{
+    background: white;
+    margin: auto 15%;
+    padding: 5%
+    display: flex;
+    flex-direction: column;
+}
+
+.olympiad_content{
+    background: white;
+    margin: auto 20%;
+    padding: 5%;
+}
+
+.page{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+td{
+    margin: 5%;
+    padding: 5%;
+}
+
+form{
+    margin: 3%;
+}
+
+main div{
+    padding: 0.5%;
+}

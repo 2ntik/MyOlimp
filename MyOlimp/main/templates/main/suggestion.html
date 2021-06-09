@@ -1,0 +1,21 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block content %}
+    <h1> Hided beyind the header! </h1>
+    <center><div class="login_content">
+        <h2>Форма обратной связи</h2>
+        <p>Здесь вы можете оставить сообщение для администрации сайта.
+            Это может быть пожелание по работе сайта, сообщение об ошибке,
+            жалоба или любое другое сообщение. Администрация получит ваше
+            сообщение в течении суток.</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    </div></center>
+{% endblock %}
+
+

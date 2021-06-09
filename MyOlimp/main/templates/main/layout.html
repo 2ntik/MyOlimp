@@ -1,0 +1,60 @@
+{% load static %}
+
+<!--<!doctype html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="header_logo">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'main/img/logo.svg' %}" alt="logo here" class="logo">
+                </a>
+            </div>
+            <div class="header_separator">
+                <img src="{% static 'main/img/separator.png' %}" alt="no-picture" class="separator">
+            </div>
+            <div class="header_main">
+                <a href="{% url 'home' %}" class="header_link"><h2 class="header_text">Главная</h2></a>
+            </div>
+            <div class="header_separator">
+                <img src="{% static 'main/img/separator.png' %}" alt="no-picture" class="separator">
+            </div>
+            <div class="header_news">
+                <a href="" class="header_link"><h2 class="header_text">Новости</h2></a>
+            </div>
+            <div class="header_separator">
+                 <img src="{% static 'main/img/separator.png' %}" alt="no-picture" class="separator">
+            </div>
+            <div class="header_olimp">
+                <a href="{% url 'olympiads' %}" class="header_link"><h2 class="header_text">Олимпиады</h2></a>
+            </div>
+            <div class="header_separator">
+                 <img src="{% static 'main/img/separator.png' %}" alt="no-picture" class="separator">
+            </div>
+            <div class="header_login">
+                <a href="{% url 'login' %}">
+                    <img src="{% static 'main/img/login.png' %}" alt="" class="login">
+                </a>
+            </div>
+        </div>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <div></div>
+            <div><a href="{% url 'suggestion' %}"><p>Обратная связь</p></a> </div>
+        </footer>
+    </div>
+</body>
+</html>

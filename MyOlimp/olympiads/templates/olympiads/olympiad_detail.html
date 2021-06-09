@@ -1,0 +1,24 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ object.name }}{% endblock %}
+
+{% block content %}
+    <h1>hided</h1>
+    <div class="olympiad_content">
+    <h1>{{ object.name }}</h1>
+    <p>{{ object.subject }}</p>
+    <p>Уровень проведения: {{ object.olympiad_level }}</p>
+    {% if object.olympiad_extramural_start is not null %}
+        <p>Начало заочного тура: {{ object.olympiad_extramural_start }}</p>
+        <p>Конец заочног тура: {{ object.olympiad_extramural_end }}</p>
+    {% endif %}
+    {% if object.olympiad_intramural_start is not null %}
+        <p>Начало очного тура: {{ object.olympiad_intramural_start }}</p>
+        <p>Конец очного тура: {{ object.olympiad_intramural_end }}</p>
+    {% endif %}
+    <p>Файл с регламентом олимпиады: {{ object.olympiad_file }}</p>
+    {% if request.user.is_staff %}
+        <p>Информация неверна? Вы можете <a href="{{ olympiad.id }}/edit">изменить</a> информацию.</p>
+    {% endif %}
+    </div>
+{% endblock %}
