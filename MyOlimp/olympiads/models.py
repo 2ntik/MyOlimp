@@ -30,10 +30,10 @@ class Olympiad(models.Model):
         ('Городская', 'Городская'),
         ('Школьная', 'Школьная'),
     ]
-    name = models.CharField(max_length=100,
-                            verbose_name='Название олимпиады',
-                            null=False,
-                            db_index=True)
+    title = models.CharField(max_length=100,
+                             verbose_name='Название олимпиады',
+                             null=False,
+                             db_index=True)
     subject = models.ForeignKey(OlympiadSubject,
                                 on_delete=models.PROTECT,
                                 verbose_name='Предмет',
@@ -57,7 +57,10 @@ class Olympiad(models.Model):
                                                verbose_name='Конец очного тура',
                                                default=None,
                                                null=True)
-    
+    olympiad_url = models.CharField(max_length=60,
+                                    verbose_name='Ссылка на сайт олимпиады',
+                                    default='Ссылка не найдена =(',
+                                    null=False, blank='false')
     olympiad_file = models.FileField(blank=True, null=True,
                                      upload_to='static/model_files/',)
     winner = models.ForeignKey(User, on_delete=models.PROTECT,

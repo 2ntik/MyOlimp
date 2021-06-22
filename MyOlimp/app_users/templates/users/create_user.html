@@ -1,13 +1,14 @@
 {% extends 'main/layout.html' %}
 
-{% block title %} Some text {% endblock %}
+{% block title %} {% endblock %}
 
 {% block content %}
     <h3>Hided</h3>
-    <div class="user_content">
-    <form method="post">
+    <div class="login_content">
+    <center><form method="post">
         {% csrf_token %}
         {{ user_form.as_p }}
         <center><button type="submit">Сохранить</button></center>
-    </form></div>
+    </form>
+    </center></div>
 {% endblock %}

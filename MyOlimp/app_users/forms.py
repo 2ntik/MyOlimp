@@ -5,9 +5,12 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
-    first_name = forms.CharField(label='Имя')
-    last_name = forms.CharField(label='Фамилия')
-    email = forms.EmailField()
+    username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя пользователя'}))
+    first_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
+    last_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
+    email = forms.EmailField(label='', widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Пароль'}))
+    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль'}))
 
     class Meta:
         model = User

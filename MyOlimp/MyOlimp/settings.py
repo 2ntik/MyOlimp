@@ -25,7 +25,7 @@ SECRET_KEY = '7knf(7jggq6rdlk7q6(#m92*ut(9gprf@x$(a@*rm1nzpwr18p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'myolimp.online', 'www.myolimp.online' ]
 
 
 # Application definition
@@ -120,12 +120,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+ADMINS = [('Danil', 'saw.danil@yandex.ru')]
+
 STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/users/edit'
 
-RECIPIENTS_EMAIL = ['saw.danil@yandex.ru']
+RECIPIENTS_EMAIL = []
 
-DEFAULT_FROM_EMAIL = 'saw.danil1111@gmail.com'
+DEFAULT_FROM_EMAIL = 'admin@myolimp.online'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'mail.hosting.reg.ru'
+
+EMAIL_PORT = 465
+
+EMAIL_HOST_USER = 'admin@myolimp.online'
+
+EMAIL_HOST_PASSWORD = 'U4qehBUbVJ6CJdx'
+
+EMAIL_USE_TLS = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
