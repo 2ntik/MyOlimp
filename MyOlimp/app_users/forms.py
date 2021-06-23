@@ -5,7 +5,7 @@ from .models import Profile
 
 
 class UserRegisterForm(UserCreationForm):
-    username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя пользователя'}))
+    username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     first_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
     last_name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
     email = forms.EmailField(label='', widget=forms.TextInput(attrs={'placeholder': 'Email'}))

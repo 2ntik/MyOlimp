@@ -65,8 +65,8 @@ class Profile(models.Model):
                                       verbose_name='Интересующие предметы')
     personal_data = models.BooleanField(null=False, default=True,
                                         verbose_name='Галочка на согласие о работе с персональными данными')
-    send_emails = models.BooleanField(null=False, default=True,
-                                      verbose_name='Согласие на получение email')
+    '''send_emails = models.BooleanField(null=False, default=True,
+                                      verbose_name='Согласие на получение email')'''
 
     def get_absolute_url(self):
         return reverse('profile')

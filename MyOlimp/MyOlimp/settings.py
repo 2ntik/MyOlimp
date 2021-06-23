@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '7knf(7jggq6rdlk7q6(#m92*ut(9gprf@x$(a@*rm1nzpwr18p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'myolimp.online', 'www.myolimp.online' ]
 
@@ -123,6 +123,8 @@ USE_TZ = True
 ADMINS = [('Danil', 'saw.danil@yandex.ru')]
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'static/'
 
 LOGIN_REDIRECT_URL = '/users/edit'
 
