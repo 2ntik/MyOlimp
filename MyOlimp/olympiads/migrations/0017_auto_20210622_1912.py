@@ -10,11 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameField(
-            model_name='olympiad',
-            old_name='name',
-            new_name='title',
-        ),
         migrations.AddField(
             model_name='olympiad',
             name='olympiad_url',

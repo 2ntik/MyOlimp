@@ -30,7 +30,7 @@ class Olympiad(models.Model):
         ('Городская', 'Городская'),
         ('Школьная', 'Школьная'),
     ]
-    title = models.CharField(max_length=100,
+    name = models.CharField(max_length=100,
                              verbose_name='Название олимпиады',
                              null=False,
                              db_index=True)
